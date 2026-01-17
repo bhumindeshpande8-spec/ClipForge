@@ -39,21 +39,43 @@ async def process_video(file: UploadFile = File(...)):
     return {"video": output_video, "edits": edit_plan}
 
 
+# --- Pydantic model matching frontend JSON ---
+class ChatRequest(BaseModel):
+    video_name: str
+    message: str
+
+# --- Async wrapper for blocking functions ---
+async def run_in_thread(func, *args, **kwargs):
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, lambda: func(*args, **kwargs))
+
 @app.post("/chat")
-async def chat_edit(video_name: str, message: str):
-    # Ensure path is correct
-    video_path = os.path.join(UPLOAD_DIR, video_name)
+async def chat_edit(payload: ChatRequest):
+    video_name = payload.video_name
+    message = payload.message
+
+    # Build path to uploaded video
+    video_path = os.path.join("uploads", video_name)
     video_path_posix = Path(video_path).as_posix()
 
-    # Transcribe with error handling
+    if not os.path.isfile(video_path):
+        raise HTTPException(status_code=404, detail="Video not found")
+
     try:
-        segments = transcribe(video_path_posix)
+        # Transcribe video
+        segments = await run_in_thread(transcribe, video_path_posix)
+
+        # Generate edit plan and apply chat command
+        edit_plan = await run_in_thread(apply_rules, segments)
+        edit_plan = await run_in_thread(apply_chat_command, edit_plan, message)
+
+        # Render final video
+        output_video = await run_in_thread(render_video, video_path, edit_plan)
+
     except RuntimeError as e:
-        return {"error": "Failed to extract audio. Check video format or FFmpeg installation."}
+        raise HTTPException(status_code=500, detail="Failed to extract audio or process video.")
 
-    # Apply rules and chat commands
-    edit_plan = apply_rules(segments)
-    edit_plan = apply_chat_command(edit_plan, message)
-    output_video = render_video(video_path, edit_plan)
-
-    return {"video": output_video, "edits": edit_plan}
+    return {
+        "video": output_video,
+        "edits": edit_plan
+    }
