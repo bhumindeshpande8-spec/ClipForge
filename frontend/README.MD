@@ -1,11 +1,13 @@
 ```
 # FrameFlow Frontend
+```
 
 Welcome to the **FrameFlow** frontend! This is the web interface for your AI-powered video editing platform, built with HTML, CSS, and JavaScript. Users can upload videos, interact with AI chat commands, and edit videos seamlessly.
 
 ---
-
+```
 ## Table of Contents
+```
 
 - [Project Overview](#project-overview)  
 - [Features](#features)  
@@ -16,8 +18,9 @@ Welcome to the **FrameFlow** frontend! This is the web interface for your AI-pow
 - [Contributing](#contributing)  
 
 ---
-
+```
 ## Project Overview
+```
 
 FrameFlow is a modern video editing web application that allows users to:
 
@@ -29,8 +32,9 @@ FrameFlow is a modern video editing web application that allows users to:
 The frontend communicates with a FastAPI backend that handles transcription, video editing logic, and rendering.
 
 ---
-
+```
 ## Features
+```
 
 - **Upload Page**: Drag-and-drop video/audio upload with progress feedback.  
 - **Studio Page**:  
@@ -42,8 +46,9 @@ The frontend communicates with a FastAPI backend that handles transcription, vid
 - **Dashboard / Hero Page**: Overview, quick navigation to the editor, and user guidance.  
 
 ---
-
+```
 ## Folder Structure
+```
 
 frontend/
 │
@@ -63,8 +68,9 @@ frontend/
 
 
 ---
-
+```
 ## Getting Started
+```
 
 1. **Clone the repository**
 
@@ -88,8 +94,9 @@ open index.html
 Make sure your **FastAPI backend** is running (default at `http://localhost:8000`) so the AI chat and video processing features work correctly.
 
 ---
-
+```
 ## Usage
+```
 
 * **Landing / Hero Page**: Click “View Dashboard” to go to the Upload page.
 * **Upload Page**: Drag & drop video/audio files into the drop zone or click “choose file.” After upload, click “Start Editing.”
@@ -102,8 +109,9 @@ Make sure your **FastAPI backend** is running (default at `http://localhost:8000
   * Manage clips using the **Timeline**.
 
 ---
-
+```
 ## Technologies
+```
 
 * **HTML5** – Structure and layout
 * **CSS3** – Styling and animations
@@ -111,8 +119,9 @@ Make sure your **FastAPI backend** is running (default at `http://localhost:8000
 * **Grid & Flexbox** – Layout management
 
 ---
-
+```
 ## Contributing
+```
 
 We welcome contributions!
 
