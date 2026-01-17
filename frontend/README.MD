@@ -46,7 +46,7 @@ The frontend communicates with a FastAPI backend that handles transcription, vid
 ---
 ## Folder Structure
 
-```plaintext
+```
 frontend/
 │
 ├── index.html          # Landing / Hero page
@@ -64,7 +64,7 @@ frontend/
 ├── dashboard.js
 
 ---
-
+```
 ## Getting Started
 
 1. **Clone the repository**
