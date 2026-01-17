@@ -1,11 +1,11 @@
-```
+
 # FrameFlow Frontend
 ```
 
 Welcome to the **FrameFlow** frontend! This is the web interface for your AI-powered video editing platform, built with HTML, CSS, and JavaScript. Users can upload videos, interact with AI chat commands, and edit videos seamlessly.
-
----
 ```
+---
+
 ## Table of Contents
 ```
 
@@ -17,11 +17,10 @@ Welcome to the **FrameFlow** frontend! This is the web interface for your AI-pow
 - [Technologies](#technologies)  
 - [Contributing](#contributing)  
 
----
 ```
+---
 ## Project Overview
 ```
-
 FrameFlow is a modern video editing web application that allows users to:
 
 - Upload videos and audio files.  
@@ -30,9 +29,9 @@ FrameFlow is a modern video editing web application that allows users to:
 - Access a timeline and editing tools for fine control.  
 
 The frontend communicates with a FastAPI backend that handles transcription, video editing logic, and rendering.
-
----
 ```
+---
+
 ## Features
 ```
 
@@ -45,8 +44,9 @@ The frontend communicates with a FastAPI backend that handles transcription, vid
   - AI chat panel for applying edits through natural language commands.  
 - **Dashboard / Hero Page**: Overview, quick navigation to the editor, and user guidance.  
 
----
 ```
+---
+
 ## Folder Structure
 ```
 
@@ -66,9 +66,9 @@ frontend/
 ├─ dashboard.css
 ├─ dashboard.js
 
-
----
 ```
+---
+
 ## Getting Started
 ```
 
@@ -93,8 +93,9 @@ open index.html
 
 Make sure your **FastAPI backend** is running (default at `http://localhost:8000`) so the AI chat and video processing features work correctly.
 
----
 ```
+---
+
 ## Usage
 ```
 
@@ -107,9 +108,9 @@ Make sure your **FastAPI backend** is running (default at `http://localhost:8000
   * Use **Tool Buttons** to apply edits manually.
   * Use the **AI Chat Panel** to send natural language commands to the backend.
   * Manage clips using the **Timeline**.
-
----
 ```
+---
+
 ## Technologies
 ```
 
@@ -117,9 +118,9 @@ Make sure your **FastAPI backend** is running (default at `http://localhost:8000
 * **CSS3** – Styling and animations
 * **JavaScript (Vanilla)** – Interactivity and frontend logic
 * **Grid & Flexbox** – Layout management
-
----
 ```
+---
+
 ## Contributing
 ```
 
@@ -131,6 +132,7 @@ We welcome contributions!
 4. Push to the branch (`git push origin feature/my-feature`)
 5. Open a Pull Request
 
+```
 ---
 
 **FrameFlow Frontend** – intuitive AI-powered video editing for everyone.
