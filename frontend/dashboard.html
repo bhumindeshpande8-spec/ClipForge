@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload | FrameFlow</title>
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Upload page styles -->
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body class="dashboard-page">
+
+
+  <!-- Main Upload Layout -->
+  <div class="upload-wrapper upload-layout">
+
+    <!-- LEFT: Sources Panel -->
+    <div class="sources-panel">
+      <h3>Uploaded sources</h3>
+
+      <div id="sourceList" class="source-list">
+        <p class="empty-text">No sources yet</p>
+      </div>
+
+      <button id="addMoreBtn" class="secondary-btn">
+        + Add sources
+      </button>
+    </div>
+
+    <!-- RIGHT: Upload Area -->
+    <div class="upload-main">
+
+      <div class="drop-zone" id="dropZone">
+        <div class="upload-icon">⬆</div>
+        <h2>Upload your video</h2>
+        <p>
+          Drag & drop video or
+          <span id="chooseFile">choose file</span>
+        </p>
+        <p class="drop-types">MP4, MP3</p>
+
+        <input
+          type="file"
+          id="hiddenFileInput"
+          hidden
+          multiple
+          accept="video/mp4,audio/mpeg"
+        />
+      </div>
+
+      <button id="startEditingBtn" class="start-btn" disabled>
+        Start editing
+        
+      </button>
+
+      <p id="uploadStatus"></p>
+    </div>
+
+  </div>
+
+  <script src="dashboard.js"></script>
+
+  <script>
+    // const links = document.querySelectorAll(".navlinks a");
+    // links.forEach(a => {
+    //   if (a.href.includes(location.pathname)) {
+    //     a.classList.add("active");
+    //   }
+    // });
+  </script>
+
+</body>
+</html>
